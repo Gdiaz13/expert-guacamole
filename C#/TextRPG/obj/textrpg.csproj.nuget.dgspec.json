@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\textrpg\\textrpg.csproj": {}
+    "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\textrpg\\textrpg.csproj": {
+    "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\textrpg\\textrpg.csproj",
+        "projectUniqueName": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj",
         "projectName": "textrpg",
-        "projectPath": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\textrpg\\textrpg.csproj",
+        "projectPath": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj",
         "packagesPath": "C:\\Users\\14845\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\textrpg\\obj\\",
+        "outputPath": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\14845\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +37,16 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -51,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
