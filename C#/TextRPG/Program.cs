@@ -1,3 +1,5 @@
+global using textrpg.Models; // This is a global using statement that allows us to use the Models namespace without having to import it in every file
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
