@@ -16,10 +16,11 @@ namespace textrpg.Controllers
     [Route("api/[controller]")] // this is the route that the controller will be listening on for example api/Character
     public class CharacterController : ControllerBase
     {
-        private static List<Character> _characters = new List<Character>{
-            new Character(),
-            new Character { Id = 1 ,Name = "Vegeta", HP = 9000, Strength = 500, Defense = 500, Speed = 500, Intelligence = 500, Ki = 1000, Race = CharacterRace.Saiyan },
-        };
+        private readonly ICharacterService _characterService; // this is a private field that will be used to access the CharacterService class
+        public CharacterController(ICharacterService characterService)
+        {
+            _characterService = characterService;
+        }
 
         [HttpGet("{id}")] // An HTTP GET request is used to retrieve data from a server
         //ActionResult is used for returning a response to the client
@@ -31,20 +32,23 @@ namespace textrpg.Controllers
             // a lambda expression is a shorthand way of writing a method example being 
             (x, y) => x + y is the same as writing public int Add(int x, int y) { return x + y; } 
             */
-            return Ok(_characters.FirstOrDefault(c => c.Id == id));
+           // return Ok(_character.FirstOrDefault(c => c.Id == id));
+           return Ok(_characterService.GetCharId(id));
         }
+
 
         [HttpGet("GetAll")] 
         public ActionResult<List<Character>> GetAll()
         {
-            return Ok(_characters);
+            return Ok(_characterService.GetAll()); // _characterService is being used for accessing the CharacterService class
         }
         
         [HttpPost] // An HTTP POST request is used to send data to the server
         public ActionResult<List<Character>> AddCharacter(Character newCharacter)
         {
-            _characters.Add(newCharacter);
-            return Ok(_characters);
+            return Ok(_characterService.AddCharacter(newCharacter));
+           /* _characters.Add(newCharacter);
+            return Ok(_characters); */
         }
     }
 }
