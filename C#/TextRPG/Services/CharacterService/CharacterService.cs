@@ -25,7 +25,14 @@ namespace textrpg.Services.CharacterService
 
         public Character GetCharId(int id)
         {
-            return (_characters.FirstOrDefault(c => c.Id == id));
+            var character = _characters.FirstOrDefault(c => c.Id == id);
+            if(character == null)
+                return character;
+
+
+             throw new Exception("Character not found");
+            
+           
         }
     }
 }

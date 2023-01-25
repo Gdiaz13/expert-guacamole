@@ -16,7 +16,11 @@ namespace textrpg.Models
         public int Defense { get; set; } = 400;
         public int Speed { get; set; } = 600;
         public int Intelligence { get; set; } = 100;
-        public int Ki { get; set; } = 1000;
+        public int Chakra { get; set; } = 1000;
+        public int Stamina { get; set; } = 1000;
+        public int Taijustu { get; set; } = 1000;
+        public int Ninjustu { get; set; } = 1000;
+        public int Genjustu { get; set; } = 1000;
         public CharacterRace Race { get; set; } = CharacterRace.Saiyan;
 
         
