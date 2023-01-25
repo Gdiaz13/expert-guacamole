@@ -10,7 +10,7 @@ namespace textrpg.Services.CharacterService
          private static List<Character> _characters = new List<Character>
          {
             new Character(),
-            new Character { Id = 1 ,Name = "Vegeta", HP = 9000, Strength = 500, Defense = 500, Speed = 500, Intelligence = 500, Ki = 1000, Race = CharacterRace.Saiyan },
+            new Character { Id = 1 ,Name = "Vegeta", HP = 9000, Strength = 500, Defense = 500, Speed = 500, Intelligence = 500, Race = CharacterRace.Saiyan },
         };
         public List<Character> AddCharacter(Character newCharacter)
         {
