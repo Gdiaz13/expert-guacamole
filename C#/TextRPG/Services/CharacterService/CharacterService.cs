@@ -11,7 +11,7 @@ namespace textrpg.Services.CharacterService
          {
             new Character(),
             new Character { Id = 1 ,Name = "Vegeta", HP = 9000, Strength = 500, Defense = 500, Speed = 500, Intelligence = 500, Race = CharacterRace.Saiyan },
-        }
+        };
         public async Task<ServiceResponse<List<Character>>> AddCharacter(Character newCharacter)
         {
             var serviceResponse = new ServiceResponse<List<Character>>();
@@ -37,8 +37,7 @@ namespace textrpg.Services.CharacterService
                 return character;
 
 
-             throw new Exception("Character not found"); */
-            
+             throw new Exception("Character not found"); */   
            
         }
     }
