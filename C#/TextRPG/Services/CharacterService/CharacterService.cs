@@ -12,18 +12,18 @@ namespace textrpg.Services.CharacterService
             new Character(),
             new Character { Id = 1 ,Name = "Vegeta", HP = 9000, Strength = 500, Defense = 500, Speed = 500, Intelligence = 500, Race = CharacterRace.Saiyan },
         };
-        public List<Character> AddCharacter(Character newCharacter)
+        public async Task<List<Character>> AddCharacter(Character newCharacter)
         {
             _characters.Add(newCharacter);
             return (_characters);
         }
 
-        public List<Character> GetAll()
+        public async Task<List<Character>> GetAll()
         {
             return _characters;
         }
 
-        public Character GetCharId(int id)
+        public async Task<Character> GetCharId(int id)
         {
             var character = _characters.FirstOrDefault(c => c.Id == id);
             if(character == null)

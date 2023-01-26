@@ -25,7 +25,7 @@ namespace textrpg.Controllers
         [HttpGet("{id}")] // An HTTP GET request is used to retrieve data from a server
         //ActionResult is used for returning a response to the client
         // adding the id parameter to the method will allow the method to accept a parameter from the route
-        public ActionResult<Character> GetCharacter(int id)
+        public async Task<ActionResult<Character>> GetCharacter(int id)
         {
             /* c = character in the list
             // => is used to define a lambda expression and specifies where the character Id returned is equal to the id passed in
@@ -33,20 +33,20 @@ namespace textrpg.Controllers
             (x, y) => x + y is the same as writing public int Add(int x, int y) { return x + y; } 
             */
            // return Ok(_character.FirstOrDefault(c => c.Id == id));
-           return Ok(_characterService.GetCharId(id));
+           return Ok(await _characterService.GetCharId(id));
         }
 
 
         [HttpGet("GetAll")] 
-        public ActionResult<List<Character>> GetAll()
+        public async Task<ActionResult<List<Character>>> GetAll()
         {
-            return Ok(_characterService.GetAll()); // _characterService is being used for accessing the CharacterService class
+            return Ok(await _characterService.GetAll()); // _characterService is being used for accessing the CharacterService class
         }
         
         [HttpPost] // An HTTP POST request is used to send data to the server
-        public ActionResult<List<Character>> AddCharacter(Character newCharacter)
+        public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter)
         {
-            return Ok(_characterService.AddCharacter(newCharacter));
+            return Ok(await _characterService.AddCharacter(newCharacter));
            /* _characters.Add(newCharacter);
             return Ok(_characters); */
         }
