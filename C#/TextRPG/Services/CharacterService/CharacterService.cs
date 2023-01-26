@@ -11,26 +11,33 @@ namespace textrpg.Services.CharacterService
          {
             new Character(),
             new Character { Id = 1 ,Name = "Vegeta", HP = 9000, Strength = 500, Defense = 500, Speed = 500, Intelligence = 500, Race = CharacterRace.Saiyan },
-        };
-        public async Task<List<Character>> AddCharacter(Character newCharacter)
+        }
+        public async Task<ServiceResponse<List<Character>>> AddCharacter(Character newCharacter)
         {
+            var serviceResponse = new ServiceResponse<List<Character>>();
             _characters.Add(newCharacter);
-            return (_characters);
+            serviceResponse.Data = _characters;
+            return serviceResponse;
         }
 
-        public async Task<List<Character>> GetAll()
+        public async Task<ServiceResponse<List<Character>>> GetAll()
         {
-            return _characters;
+            var serviceResponse = new ServiceResponse<List<Character>>();
+            serviceResponse.Data = _characters;
+            return serviceResponse;
         }
 
-        public async Task<Character> GetCharId(int id)
+        public async Task<ServiceResponse<Character>> GetCharId(int id)
         {
-            var character = _characters.FirstOrDefault(c => c.Id == id);
+            var serviceResponse = new ServiceResponse<Character>();
+            serviceResponse.Data = _characters.FirstOrDefault(c => c.Id == id);
+            return serviceResponse;
+           /* var character = _characters.FirstOrDefault(c => c.Id == id);
             if(character == null)
                 return character;
 
 
-             throw new Exception("Character not found");
+             throw new Exception("Character not found"); */
             
            
         }
