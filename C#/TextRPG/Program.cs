@@ -1,5 +1,7 @@
 global using textrpg.Models; // This is a global using statement that allows us to use the Models namespace without having to import it in every file
 global using textrpg.Services.CharacterService; 
+global using textrpg.DTOs.Character; // This is a global using statement that allows us to use the DTOs namespace without having to import it in every file
+global using AutoMapper; // This is a global using statement that allows us to use the AutoMapper namespace without having to import it in every file
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program).Assembly); // This is a dependency injection service that allows us to use the AutoMapper class in the Program class
 builder.Services.AddScoped<ICharacterService, CharacterService>(); // This is a dependency injection service that allows us to use the CharacterService class in the ICharacterService interfaced
 
 var app = builder.Build();

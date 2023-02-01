@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Valued Customer\\Desktop\\Gendy Code\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj": {}
+    "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Valued Customer\\Desktop\\Gendy Code\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj": {
+    "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Valued Customer\\Desktop\\Gendy Code\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj",
+        "projectUniqueName": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj",
         "projectName": "textrpg",
-        "projectPath": "C:\\Users\\Valued Customer\\Desktop\\Gendy Code\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj",
-        "packagesPath": "C:\\Users\\Valued Customer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Valued Customer\\Desktop\\Gendy Code\\expert-guacamole\\C#\\TextRPG\\obj\\",
+        "projectPath": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\textrpg.csproj",
+        "packagesPath": "C:\\Users\\14845\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\14845\\Desktop\\CodeProjects\\expert-guacamole\\C#\\TextRPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Valued Customer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\14845\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -66,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

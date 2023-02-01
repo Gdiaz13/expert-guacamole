@@ -25,7 +25,7 @@ namespace textrpg.Controllers
         [HttpGet("{id}")] // An HTTP GET request is used to retrieve data from a server
         //ActionResult is used for returning a response to the client
         // adding the id parameter to the method will allow the method to accept a parameter from the route
-        public async Task<ActionResult<Character>> GetCharacter(int id)
+        public async Task<ActionResult<ServiceResponse<GetCharacterResponseDto>>> GetCharacter(int id)
         {
             /* c = character in the list
             // => is used to define a lambda expression and specifies where the character Id returned is equal to the id passed in
@@ -38,13 +38,13 @@ namespace textrpg.Controllers
 
 
         [HttpGet("GetAll")] 
-        public async Task<ActionResult<List<Character>>> GetAll()
+        public async Task<ActionResult<ServiceResponse<List<GetCharacterResponseDto>>>> GetAll()
         {
             return Ok(await _characterService.GetAll()); // _characterService is being used for accessing the CharacterService class
         }
         
         [HttpPost] // An HTTP POST request is used to send data to the server
-        public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter)
+        public async Task<ActionResult<ServiceResponse<List<GetCharacterResponseDto>>>> AddCharacter(AddCharacterRequestDto newCharacter)
         {
             return Ok(await _characterService.AddCharacter(newCharacter));
            /* _characters.Add(newCharacter);
