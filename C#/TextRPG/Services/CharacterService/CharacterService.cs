@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using textrpg.DTOs;
 
 namespace textrpg.Services.CharacterService
 {
@@ -48,6 +49,41 @@ namespace textrpg.Services.CharacterService
 
              throw new Exception("Character not found"); */   
            
+        }
+
+        public async Task<ServiceResponse<GetCharacterResponseDto>> UpdateCharacter(UpdateCharacterRequestDto updatedCharacter)
+        {
+            var serviceResponse = new ServiceResponse<GetCharacterResponseDto>();
+            try
+            {
+                
+                var character = _characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
+                if (character is null)
+                      throw new Exception($"Character with id {updatedCharacter.Id} not found.");
+                
+                    /*serviceResponse.Success = false;
+                    serviceResponse.Message = "Character not found.";
+                    return Task.FromResult(serviceResponse);*/
+                
+
+                character.Name = updatedCharacter.Name;
+                character.HP = updatedCharacter.HP;
+                character.Strength = updatedCharacter.Strength;
+                character.Defense = updatedCharacter.Defense;
+                character.Speed = updatedCharacter.Speed;
+                character.Stamina = updatedCharacter.Stamina;
+
+                serviceResponse.Data = _mapper.Map<GetCharacterResponseDto>(character);
+               
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
+            }
+
+            return serviceResponse;
+          
         }
     }
 }

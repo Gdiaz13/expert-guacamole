@@ -50,5 +50,16 @@ namespace textrpg.Controllers
            /* _characters.Add(newCharacter);
             return Ok(_characters); */
         }
+
+        [HttpPut] // An HTTP PUT request is used to update data on the server
+        public async Task<ActionResult<ServiceResponse<GetCharacterResponseDto>>> UpdateCharacter(UpdateCharacterRequestDto updatedCharacter)
+        {
+            var response = await _characterService.UpdateCharacter(updatedCharacter);
+            if(response.Data == null)
+            {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
     }
 }

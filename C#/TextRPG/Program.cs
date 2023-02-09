@@ -2,6 +2,8 @@ global using textrpg.Models; // This is a global using statement that allows us 
 global using textrpg.Services.CharacterService; 
 global using textrpg.DTOs.Character; // This is a global using statement that allows us to use the DTOs namespace without having to import it in every file
 global using AutoMapper; // This is a global using statement that allows us to use the AutoMapper namespace without having to import it in every file
+global using textrpg.DTOs;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
