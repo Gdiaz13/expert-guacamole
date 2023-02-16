@@ -60,20 +60,24 @@ namespace textrpg.Services.CharacterService
                 var character = _characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
                 if (character is null)
                       throw new Exception($"Character with id {updatedCharacter.Id} not found.");
-                
-                    /*serviceResponse.Success = false;
+
+                    _mapper.Map(updatedCharacter,character); // Map the properties from updatedCharacter to character 
+
+                    /* character.Name = updatedCharacter.Name; // Assign Name property manually
+                    character.HP = updatedCharacter.HP; // Assign HP property manually
+                    character.Strength = updatedCharacter.Strength; // Assign Strength property manually
+                    character.Defense = updatedCharacter.Defense; // Assign Defense property manually
+                    character.Speed = updatedCharacter.Speed; // Assign Speed property manually
+                    character.Stamina = updatedCharacter.Stamina; // Assign Stamina property manually
+               
+                    serviceResponse.Success = false;
                     serviceResponse.Message = "Character not found.";
                     return Task.FromResult(serviceResponse);*/
                 
 
-                character.Name = updatedCharacter.Name;
-                character.HP = updatedCharacter.HP;
-                character.Strength = updatedCharacter.Strength;
-                character.Defense = updatedCharacter.Defense;
-                character.Speed = updatedCharacter.Speed;
-                character.Stamina = updatedCharacter.Stamina;
+              
 
-                serviceResponse.Data = _mapper.Map<GetCharacterResponseDto>(character);
+                serviceResponse.Data = _mapper.Map<GetCharacterResponseDto>(character); // Map character to a GetCharacterResponseDto
                
             }
             catch (Exception ex)
