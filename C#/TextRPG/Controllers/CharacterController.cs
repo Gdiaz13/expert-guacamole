@@ -61,5 +61,16 @@ namespace textrpg.Controllers
             }
             return Ok(response);
         }
+        [HttpDelete("{id}")] // An HTTP DELETE request is used to delete data from the server
+        public async Task<ActionResult<ServiceResponse<GetCharacterResponseDto>>> DeleteCharacter(int id)
+        {
+            var response = await _characterService.DeleteCharacter(id); // this is using the CharacterService class to delete the character
+            if(response.Data == null)
+            {
+                return NotFound(response);
+            }
+        
+           return Ok(response);
+        }
     }
 }

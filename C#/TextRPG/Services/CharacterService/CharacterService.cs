@@ -29,6 +29,32 @@ namespace textrpg.Services.CharacterService
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<List<GetCharacterResponseDto>>> DeleteCharacter(int id)
+        {
+            var serviceResponse = new ServiceResponse<List<GetCharacterResponseDto>>();
+            try
+            {
+                var character = _characters.First(c => c.Id == id);
+                if (character is null)
+                      throw new Exception($"Character with id {id} not found.");
+
+                _characters.Remove(character); // Remove the character from the list of characters
+
+                serviceResponse.Data = _characters.Select(c => _mapper.Map<GetCharacterResponseDto>(c)).ToList(); // Map each character to a GetCharacterResponseDto
+               
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
+            }
+
+            return serviceResponse;
+          
+        }
+    
+        
+
         public async Task<ServiceResponse<List<GetCharacterResponseDto>>> GetAll()
         {
             var serviceResponse = new ServiceResponse<List<GetCharacterResponseDto>>();

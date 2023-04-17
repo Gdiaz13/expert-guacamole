@@ -12,7 +12,7 @@ namespace textrpg.Services.CharacterService
         Task<ServiceResponse<List<GetCharacterResponseDto>>> GetAll();
         Task<ServiceResponse<GetCharacterResponseDto>> GetCharId(int id);
         Task<ServiceResponse<List<GetCharacterResponseDto>>> AddCharacter(AddCharacterRequestDto newCharacter);
-
         Task<ServiceResponse<GetCharacterResponseDto>> UpdateCharacter(UpdateCharacterRequestDto updatedCharacter);
+        Task<ServiceResponse<List<GetCharacterResponseDto>>> DeleteCharacter(int id);
     }
 }
