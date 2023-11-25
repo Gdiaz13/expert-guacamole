@@ -1,15 +1,19 @@
-global using textrpg.Models; // This is a global using statement that allows us to use the Models namespace without having to import it in every file
-global using textrpg.Services.CharacterService; 
-global using textrpg.DTOs.Character; // This is a global using statement that allows us to use the DTOs namespace without having to import it in every file
-global using AutoMapper; // This is a global using statement that allows us to use the AutoMapper namespace without having to import it in every file
-global using textrpg.DTOs;
+global using AutoMapper;
+global using Microsoft.EntityFrameworkCore;
+global using textrpg.Data;
+global using textrpg.DTOs.Character;
+global using textrpg.Models;
+global using textrpg.Services.CharacterService;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // This is a dependency injection service that allows us to use the DataContext class in the Program class
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -41,7 +45,6 @@ Features to add
 - connect to a database
 - Have a player created an account using their email/username and password (maybe have a way to verify the email)
 - Add a way to save the character to a database
-- Change setting from DBZ to Naruto Ninjas
 - Add a way to add items to the character
 - Add a way to add skills to the character
 - Add a way to add quests to the character
