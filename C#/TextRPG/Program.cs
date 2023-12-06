@@ -42,9 +42,9 @@ app.Run();
  mother gave idea to make a game where you search for a lost woman finding clues throughout the area was very specific about adding references to sunflowers. 
  Will come back to this idea later.
 Features to add
-- connect to a database
+- connect to a database - done
 - Have a player created an account using their email/username and password (maybe have a way to verify the email)
-- Add a way to save the character to a database
+- Add a way to save the character to a database - done
 - Add a way to add items to the character
 - Add a way to add skills to the character
 - Add a way to add quests to the character
