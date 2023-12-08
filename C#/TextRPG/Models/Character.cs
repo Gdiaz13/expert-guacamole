@@ -15,5 +15,6 @@ namespace textrpg.Models
         public int Stamina { get; set; } = 1000;
         public CharacterRace Race { get; set; } = CharacterRace.Saiyan;
         public CharacterClass Class { get; set; } = CharacterClass.Knight;
+        public User? User { get; set; }
     }
 }
